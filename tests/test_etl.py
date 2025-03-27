@@ -4,15 +4,26 @@ Use mock.patch when mocking a function at the module or global level.
 Use mock.patch.object when mocking a method inside a specific class.
 
 Use mock.patch.dict when modifying dictionaries like environment variables."""
+import os
+import sys
+from pathlib import Path
 import unittest
 from unittest import mock
-import os
-import boto3
-import botocore
 
 # Set environment variables for AWS credentials (to avoid real credential lookup)
 os.environ['AWS_ACCESS_KEY_ID'] = 'fake-access'
 os.environ['AWS_SECRET_ACCESS_KEY'] = 'fake-secret'
+
+# Set the current working directory and add it to sys.path for imports
+MYDIR = os.getcwd()
+sys.path.append(MYDIR)
+
+# Set path for the parent directory
+path = Path(MYDIR)
+PARENT_DIR = str(path.parent.absolute())
+
+# Append the parent directory to sys.path for module import
+sys.path.append(PARENT_DIR)
 
 # Import functions to be tested from the apod_pipeline module
 from dags.pipelines.apod_pipeline import extract, transform, apod_pipeline
