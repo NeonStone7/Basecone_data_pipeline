@@ -2,9 +2,9 @@
 import os
 import sys
 from pathlib import Path
-import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
+import pandas as pd
 
 # Load environment variables from a .env file
 load_dotenv()
