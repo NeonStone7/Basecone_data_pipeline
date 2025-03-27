@@ -18,7 +18,7 @@ jobs:
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                 aws-region: us-east-2
             
-            - name: Upload Files
-              run: |
-                aws s3 cp ./dags/ s3://airflow-dags-nasa-api-oamen/dags/ --recursive
+            # - name: Upload Files
+            #   run: |
+            #     aws s3 cp ./dags/ s3://airflow-dags-nasa-api-oamen/dags/ --recursive
                 
