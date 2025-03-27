@@ -1,3 +1,9 @@
+"""Unit testing
+Use mock.patch when mocking a function at the module or global level.
+
+Use mock.patch.object when mocking a method inside a specific class.
+
+Use mock.patch.dict when modifying dictionaries like environment variables."""
 import unittest
 from unittest import mock
 import os

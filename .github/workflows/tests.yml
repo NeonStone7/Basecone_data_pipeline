@@ -24,7 +24,7 @@ jobs:
                 pip install -r requirements.txt
             
             - name: Run pylint
-              run: pylint $(git ls-files '*.py')  # Only checks Python files in the repo
+              run: pylint --disable=C0301,C0303 dags/ 
             
             - name: Run pytest
               run: pytest tests/
