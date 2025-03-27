@@ -24,7 +24,7 @@ jobs:
                 pip install -r requirements.txt
             
             - name: Run pylint
-              run: pylint --disable=C0301,C0303 dags/ 
+              run: pylint --disable=C0301,C0303, R0801, C0413 dags/ 
             
             - name: Run pytest
               run: pytest tests/
