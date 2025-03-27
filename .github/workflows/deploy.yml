@@ -20,5 +20,5 @@ jobs:
             
             - name: Upload Files
               run: |
-                aws s3 cp ./dags/ s3://airflow-dags-nasa-api-oamen/dags/
+                aws s3 cp ./dags/ s3://airflow-dags-nasa-api-oamen/dags/ --recursive
                 
